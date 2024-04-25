@@ -1,4 +1,4 @@
-package com.example.fullstack.domain.exeptions;
+package com.example.fullstack.domain.exeptions.user;
 
 public class UserIdNotFoundException extends RuntimeException{
     public UserIdNotFoundException(String message){

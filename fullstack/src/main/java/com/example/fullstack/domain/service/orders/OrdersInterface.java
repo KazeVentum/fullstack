@@ -1,10 +1,10 @@
-package com.example.fullstack.domain.service;
+package com.example.fullstack.domain.service.orders;
 
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-public interface UserInterface<T>{
+public interface OrdersInterface<T>{
     List<T> getAll();
     ResponseEntity<T> getById(Object id);
     ResponseEntity<T> save(T t);

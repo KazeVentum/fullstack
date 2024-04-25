@@ -1,9 +1,8 @@
 package com.example.fullstack.persistence.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class User {
@@ -16,6 +15,9 @@ public class User {
     private String password;
 
     private String email;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Orders> orders;
 
     public Long getId() {
         return id;

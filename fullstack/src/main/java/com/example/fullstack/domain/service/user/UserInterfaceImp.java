@@ -1,7 +1,7 @@
-package com.example.fullstack.domain.service;
+package com.example.fullstack.domain.service.user;
 
-import com.example.fullstack.domain.exeptions.UserIdNotFoundException;
-import com.example.fullstack.domain.exeptions.UserNotFoundException;
+import com.example.fullstack.domain.exeptions.user.UserIdNotFoundException;
+import com.example.fullstack.domain.exeptions.user.UserNotFoundException;
 import com.example.fullstack.domain.repository.UserRepository;
 import com.example.fullstack.persistence.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
