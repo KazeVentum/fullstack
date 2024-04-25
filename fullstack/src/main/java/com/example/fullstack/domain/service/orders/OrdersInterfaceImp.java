@@ -62,6 +62,7 @@ public class OrdersInterfaceImp implements OrdersInterface<Orders> {
             if(optionalOrders.isPresent()){
 
                 Orders orderSend = optionalOrders.get();
+                orderSend.setUser(ordersUpdate.getUser());
                 orderSend.setOrder_date(ordersUpdate.getOrder_date());
                 orderSend.setTotal_amount(ordersUpdate.getTotal_amount());
                 orderSend.setStatus(ordersUpdate.getStatus());

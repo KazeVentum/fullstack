@@ -3,18 +3,22 @@ package com.example.fullstack.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JoinColumn(name="user_id", nullable = false)
+    @JoinColumn(name="customer_id", nullable = false)
     @ManyToOne(fetch = FetchType.EAGER)
-    private User user;
+    private Customer customer;
     private LocalDate order_date;
     private double total_amount;
     private String status;
+
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
+    private List<OrderDetail> orderDetails;
 
     public Long getId() {
         return id;
@@ -24,12 +28,12 @@ public class Orders {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Customer getUser() {
+        return customer;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Customer customer) {
+        this.customer = customer;
     }
 
     public LocalDate getOrder_date() {
@@ -60,7 +64,7 @@ public class Orders {
     public String toString() {
         return "Orders{" +
                 "id=" + id +
-                ", user=" + user +
+                ", user=" + customer +
                 ", order_date=" + order_date +
                 ", total_amount=" + total_amount +
                 ", status='" + status + '\'' +
